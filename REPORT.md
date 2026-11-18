@@ -33,6 +33,7 @@ This is a *redeployment of the original file*, not a rebuild: no text, style, im
 - `tests/native.test.mjs`: new test — the config holds the new address and nothing visitor-facing (`src/`, `App.js`, `distribution/`, `app.json`) contains `chatgpt.site`; version test updated.
 - `CHANGES.md`, `README.md`, `TESTING.md`, `RELEASE_STATUS.md` updated; About-screen render regenerated.
 - Built and signed by the existing GitHub Actions workflow with the same CI key as 3.0.0/3.1.0, so the APK **installs as an update** over those versions (same application ID `com.lacavane.visitor`). The original 1.x/2.x key was never available, so 3.x remains a separate install next to a 2.x app.
+- **3.2.1 (versionCode 6)**: `src/website.js` — the buttons check that `https://www.lacavane.com` answers and otherwise open the same site at its GitHub Pages address, so the link works before the domain exists and survives a future outage of either host; no connection → a clear message. When the domain goes live the primary address takes over without a new build.
 
 ## 4. What the owner still has to do (and costs)
 
@@ -40,7 +41,7 @@ This is a *redeployment of the original file*, not a rebuild: no text, style, im
 2. **Add the DNS records** in `DEPLOY.md §1` (www CNAME → `eliemahfouz03-debug.github.io`; apex A/AAAA → GitHub Pages).
 3. In the repository's *Settings → Pages*, confirm the custom domain and tick **Enforce HTTPS** once the certificate is issued.
 
-Until step 2 propagates, the site is reachable at the temporary address `https://eliemahfouz03-debug.github.io/lacavane-website/` and the app's website button opens a browser error page.
+Until step 2 propagates, the site is live at `https://eliemahfouz03-debug.github.io/lacavane-website/` (enabled and verified on 18 Nov 2026) and app 3.2.1 opens that address automatically whenever `www.lacavane.com` does not answer. The custom domain is kept out of the Pages settings until then (`CNAME.pending`), because GitHub would otherwise redirect the github.io address to the unregistered domain.
 
 ## 5. Original vs. final — honest comparison
 
