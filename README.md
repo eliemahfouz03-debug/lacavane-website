@@ -13,7 +13,7 @@ The promotional website of **La Cavane — Vineyard and Wine Experience Center**
 | `index.html` | The whole site: styles, script, three embedded images (WebP data URIs), both languages (EN/FR). This is the owner's own export of the ChatGPT Site (`03_Website_Reference/dist/index.html` in the redesign package), unchanged except for the `<head>` additions listed below. |
 | `src/app.js` | The readable interaction script, as shipped with the export. Edit it, then paste it back into the inline `<script>` of `index.html`. |
 | `404.html` | Copy of the site so that unknown paths still show it (GitHub Pages serves this file for 404s). |
-| `CNAME` | `www.lacavane.com` — tells GitHub Pages which domain serves the site. |
+| `CNAME.pending` | `www.lacavane.com` — rename to `CNAME` once the domain's DNS points here (DEPLOY.md explains why it is not active yet). |
 | `.nojekyll`, `robots.txt`, `sitemap.xml` | Hosting hygiene. |
 | `vercel.json`, `netlify.toml` | Equivalent configuration if the site is moved to Vercel or Netlify. |
 | `DEPLOY.md` | Domain registration, DNS records, HTTPS, the ChatGPT-Sites alternative. |

@@ -15,8 +15,9 @@ Nothing was purchased for you; do not buy until you are ready to run step 2 belo
 ## 1. Hosting on GitHub Pages (what this repository is configured for)
 
 - Repository: `https://github.com/eliemahfouz03-debug/lacavane-website` (public — GitHub Pages is free only on public repositories).
-- Branch `main`, folder `/` (root). `CNAME` contains `www.lacavane.com`; `.nojekyll` disables Jekyll processing.
-- Temporary address until the domain is connected: `https://eliemahfouz03-debug.github.io/lacavane-website/`
+- Branch `main`, folder `/` (root); `.nojekyll` disables Jekyll processing. Pages was enabled on 18 Nov 2026.
+- Live address today: **`https://eliemahfouz03-debug.github.io/lacavane-website/`** (HTTPS). The Android app uses it automatically as long as `www.lacavane.com` does not answer.
+- **Why `CNAME.pending` and not `CNAME`:** as soon as a custom domain is set, GitHub redirects the github.io address to that domain. With the domain not registered yet that would send every visitor — and the app's fallback — to a dead address, so the domain is deliberately *not* configured until the DNS records below exist. Connecting it later is one step (see "Then, in GitHub").
 
 ### DNS records to add at the registrar
 
@@ -36,7 +37,7 @@ These are GitHub's published Pages addresses; confirm them against *docs.github.
 
 ### Then, in GitHub
 
-1. Repository → **Settings → Pages**. Source: *Deploy from a branch*, `main`, `/ (root)`. Custom domain: `www.lacavane.com` → **Save** (already set by the deployment; re-save if it is empty).
+1. Rename `CNAME.pending` to `CNAME` and push (or type `www.lacavane.com` in Repository → **Settings → Pages → Custom domain** and **Save** — GitHub then creates the same file). Source is already *Deploy from a branch*, `main`, `/ (root)`.
 2. Wait for the "DNS check successful" message (minutes to an hour after the records propagate; up to 24–48 h worst case).
 3. Tick **Enforce HTTPS** once it becomes available (GitHub obtains a Let's Encrypt certificate automatically).
 4. Optional, recommended: your GitHub account → Settings → Pages → *Add a domain* → `lacavane.com`, and add the TXT record GitHub shows. This "verified domain" prevents anyone else from pointing it at a Pages site.
